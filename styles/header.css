@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 16px;
+  gap: 24px;
+}
+.header img {
+  width: 40px;
+  background-color: rgba(23, 65, 78, 0.57);
+}
+.header_bg {
+    width: 100dvw;
+    height: 96px;
+    background-color: #06252E;
+}
