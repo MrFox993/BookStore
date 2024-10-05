@@ -7,8 +7,8 @@ function getBooksHTMLTemplate(indexBook){
             <div class="book_info_head">
                 <p id="book_price">${(books[indexBook]["price"]).toFixed(2)} €</p>
                 <div class="books_likes_info">
-                    <p id="book_likes">${(books[indexBook]["likes"])}</p>
-                    <img id="book_likes_heart_${(indexBook)}" class="book_likes_heart" src="./assets/icons/heart-2034908_1280.png" alt="heart_likes">
+                    <p id="book_likes_${(indexBook)}">${(books[indexBook]["likes"])}</p>
+                    <img onclick="likeBook(${(indexBook)})" id="book_likes_heart_${(indexBook)}" class="book_likes_heart" src="./assets/icons/heart-2034908_1280.png" alt="heart_likes">
                 </div>
             </div>
             <div class="book_info_main">
