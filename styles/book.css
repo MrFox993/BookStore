@@ -38,8 +38,12 @@
     gap: 8px;
 }
 
-#book_likes_heart {
+.book_likes_heart {
     width: 16px;
+}
+
+.book_not_liked {
+    filter: brightness(0) invert(1);
 }
 
 .book_info_main {
