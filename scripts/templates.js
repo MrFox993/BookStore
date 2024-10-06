@@ -30,8 +30,9 @@ function getBooksHTMLTemplate(indexBook){
         </div>
         <div id="book_user_comment">
             <div class="user_comment_input">
-                <input type="text" value="" placeholder="Write your comment here ...">
-                <button type="button"><img class="submit_button" src="./assets/icons/paper-airplane-1513032_1280.png" alt="submit_button"></button>
+                <input id="new_comment_name_${(indexBook)}" type="text" minlength="3" placeholder="name">
+                <input id="new_comment_${(indexBook)}" type="text" value="" placeholder="comment ...">
+                <button onclick="submitComment(${(indexBook)})" type="button"><img class="submit_button" src="./assets/icons/paper-airplane-1513032_1280.png" alt="submit_button"></button>
             </div>
         </div>
     </div>

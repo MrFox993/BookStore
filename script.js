@@ -61,3 +61,31 @@ function likeBook(indexBook) {
     bookLikesRef.innerHTML = books[indexBook]["likes"];
   }
 }
+
+function submitComment(indexBook) {
+  let newCommentNameRef = document.getElementById(`new_comment_name_${(indexBook)}`);
+  let newCommentRef = document.getElementById(`new_comment_${(indexBook)}`);
+  let newCommentName = newCommentNameRef.value;
+  let newComment = newCommentRef.value;
+
+  if (newCommentName.length < 3) {
+    let promptName = prompt("Your name needs to be at least three characters.", "abc")
+    if ( promptName == null || promptName == " " || promptName.length < 3) {
+      alert("Your name needs to be at least three characters.")
+      return
+    } else {
+      books[indexBook]["comments"].unshift({"name":`${(promptName)}`, "comment":`${(newComment)}`})
+      renderComments(indexBook)
+    }
+  } else if (newComment.length == 0 || newComment == null || newComment == " ") {
+    alert("Your comment needs to be at least one character.")
+    return
+  } else {
+    books[indexBook]["comments"].unshift({"name":`${(newCommentName)}`, "comment":`${(newComment)}`})
+    renderComments(indexBook)
+  };
+
+  newCommentNameRef.value = "";
+  newCommentRef.value = "";
+
+}
