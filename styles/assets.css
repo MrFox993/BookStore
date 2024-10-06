@@ -1,8 +1,20 @@
 .submit_button {
-    width: 24px;
     height: 25.5px;
 }
 
 button {
     background-color: #2b3d4f;
+}
+
+
+@media screen and (min-width: 1450px) {
+    .submit_button {
+        height: 38px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .submit_button {
+        height: 56.5px;
+    }
 }

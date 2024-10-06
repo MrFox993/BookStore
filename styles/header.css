@@ -9,11 +9,41 @@
   margin: auto;
 }
 .header img {
-  width: 40px;
+  width: 80px;
   background-color: rgba(23, 65, 78, 0.57);
 }
 .header_bg {
     width: 100dvw;
     height: 120px;
     background-color: #06252E;
+}
+
+@media screen and (min-width: 1920px) {
+  .header img {
+    width: 200px;
+  }
+  h1 {
+    font-size: 4.5em;
+  }  
+  .header {
+    height: 240px;
+  }
+  .header_bg {
+    height: 240px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .header img {
+    width: 40px;
+  }
+  h1 {
+    font-size: 1.0em;
+  }  
+  .header {
+    height: 80px;
+  }
+  .header_bg {
+    height: 80px;
+  }
 }

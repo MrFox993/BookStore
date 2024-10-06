@@ -2,13 +2,13 @@
     background-color: #2b3d4f;
     border-radius: 10px;
     padding: 20px;
-    width: 400px;
     height: 600px;
     margin: 20px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 #book_title {
@@ -39,7 +39,7 @@
 }
 
 .book_likes_heart {
-    width: 16px;
+    width: 24px;
 }
 
 .book_not_liked {
@@ -51,14 +51,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 40px;
     text-align: left;
-    max-width: 300px;
+    max-width: 360px;
 }
 
 .book_info_main_dynamic {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .comment_section {
@@ -66,6 +67,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 8px;
+    gap: 8px;
 }
 
 #single_comment {
@@ -76,24 +78,35 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 16px;
-    text-align: left;
-    max-width: 380px;
+    max-width: 360px;
 }
 
 .book_comments_container {
-    max-height: 120px;
+    max-height: 144px;
     overflow-y: scroll;   
     margin-bottom: 10px;
     padding-right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .book_comments_container::-webkit-scrollbar {
-    width: 8px;
+    width: 16px;
+}
+
+.book_comments_container::-webkit-scrollbar-track {
+    background-color: #115063;
+}
+
+.book_comments_container::-webkit-scrollbar-thumb {
+    background-color: white;
 }
 
 .book_comment {
     display: flex;
+    gap: 8px;
 }
 
 .user_comment_input {
@@ -110,4 +123,83 @@ input {
     border: none;
     background-color: #0E5062;
     color: white;
+}
+
+@media screen and (max-width: 490px) {
+    .single_book {
+        width: 280px;
+        margin: 8px auto;
+    }
+}
+
+@media screen and (min-width: 1450px) {
+    .single_book {
+        width: 600px;
+        height: 800px;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    #book_image img {
+        width: 240px;
+    }
+    .book_info_head {
+        font-size: 1.5em;
+    }
+    .book_info_main {
+        max-width: 540px;
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    .book_comments_container {
+        max-height: 200px;
+    }
+    #single_comment {
+        max-width: 540px;
+        font-size: 1.25em;
+    }
+    .user_comment_input {
+        max-width: 540px;
+    }
+    input {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .single_book {
+        width: 1000px;
+        height: 1100px;
+    }
+    h2 {
+        font-size: 3.5em;
+    }
+    #book_image img {
+        width: 360px;
+    }
+    .book_info_head {
+        font-size: 2.5em;
+    }
+    .book_info_main {
+        max-width: 800px;
+        font-size: 2.5em;
+    }
+    h3 {
+        font-size: 2.5em;
+    }
+    .book_comments_container {
+        max-height: 200px;
+    }
+    #single_comment {
+        max-width: 800px;
+        font-size: 2.25em;
+    }
+    .user_comment_input {
+        max-width: 800px;
+    }
+    input {
+        font-size: 2.5em;
+    }
 }
