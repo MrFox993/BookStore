@@ -81,6 +81,21 @@
     max-width: 360px;
 }
 
+td:nth-child(2){
+    padding-left: 40px;
+}
+tbody{
+    vertical-align: text-top;
+}
+
+.book_comment_author {
+    text-align: left;
+}
+
+.book_comment {
+    text-align: left;
+}
+
 .book_comments_container {
     max-height: 144px;
     overflow-y: scroll;   

@@ -47,12 +47,12 @@ function getBookCommentHTML(indexBook, indexComment) {
 function getBookCommentsHTMLTemplate(indexBook, indexComment) {
     return `
         <div id="single_comment">
-            <div class="book_comment_author">
-                <p>${(books[indexBook]["comments"][indexComment].name)}</p>
-            </div>
-            <div class="book_comment">
-                : <p>${(books[indexBook]["comments"][indexComment].comment)}</p>
-            </div>
+        <table>
+            <tr>
+            <td class="book_comment_author">${(books[indexBook]["comments"][indexComment].name)}</td>
+            <td class="book_comment">${(books[indexBook]["comments"][indexComment].comment)}</td>
+            </tr>
+        </table>
         </div>
     `;
 }
