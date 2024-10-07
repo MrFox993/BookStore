@@ -1,4 +1,5 @@
 function renderBooks() {
+  getFromLocalStorage()
   let fullContentRef = document.getElementById("full_content");
   fullContentRef.innerHTML = "";
   for (let indexBook = 0; indexBook < books.length; indexBook++) {
@@ -40,10 +41,8 @@ function renderliked(indexBook) {
 }
 
 function likeBook(indexBook) {
-  let bookAlreadyLiked = "";
-  bookAlreadyLiked = books[indexBook]["liked"];
-  let bookLikeCounter = "";
-  bookLikeCounter = books[indexBook]["likes"];
+  let bookAlreadyLiked = books[indexBook]["liked"];
+  let bookLikeCounter = books[indexBook]["likes"];
   let bookLikedRef = document.getElementById(`book_likes_heart_${(indexBook)}`);
   let bookLikesRef = document.getElementById(`book_likes_${(indexBook)}`);
 
@@ -60,6 +59,7 @@ function likeBook(indexBook) {
     bookLikesRef.innerHTML = "";
     bookLikesRef.innerHTML = books[indexBook]["likes"];
   }
+  saveToLocalStorage(indexBook)
 }
 
 function submitComment(indexBook) {
@@ -87,5 +87,24 @@ function submitComment(indexBook) {
 
   newCommentNameRef.value = "";
   newCommentRef.value = "";
+  saveToLocalStorage(indexBook)
+}
 
+function saveToLocalStorage(indexBook) {
+  let singleBookJSON = JSON.stringify(books[indexBook]);
+  localStorage.setItem(indexBook, singleBookJSON)
+}
+
+function getFromLocalStorage() {
+  for (let indexBookLocal = 0; indexBookLocal < books.length; indexBookLocal++) {
+    let singleBookJSON = "";
+    singleBookJSON = localStorage.getItem(indexBookLocal);
+    let singleBookObject = JSON.parse(singleBookJSON);
+
+    if (singleBookObject != null){
+      books[indexBookLocal] = singleBookObject
+    }else{
+      return
+    }
+  }
 }
